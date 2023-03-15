@@ -9,7 +9,7 @@ return(
     <Container>
     <Link to='/'><img src={logo} alt="Costs"></img></Link>
 
-    <ul class={styles.list}>
+    <ul className={styles.list}>
         <li className={styles.item}><Link to='/'><strong>Home</strong> </Link></li>
         <li className={styles.item}><Link to='/Projects'><strong>Projetos</strong> </Link></li>
         <li className={styles.item}><Link to='/Contact'><strong>Contato</strong> </Link></li>
