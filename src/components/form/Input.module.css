@@ -13,5 +13,5 @@
     border: none;
 }
 .form_control input::placeholder{
-    color: lightblue;
+    color: gray;
 }
