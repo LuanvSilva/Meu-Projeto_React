@@ -9,8 +9,8 @@ function Select({text,name,options,handleOnChange,defaultValue}){
      defaultValue={defaultValue || ''}>
       
     <option>Selecione uma Opçao</option>
-    {options.map((option) => (
-      <option defaultValue={option.id} key={option.id}>{option.name}</option>
+    {options.map((options) => (
+      <option defaultValue={options.id} key={options.id}>{options.name}</option>
     ))}
     </select>
   
