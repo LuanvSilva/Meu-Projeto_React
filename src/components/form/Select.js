@@ -4,8 +4,14 @@ function Select({text,name,options,handleOnChange,defaultValue}){
  return(
     <div className={styles.form_control}>
     <label htmlFor={name}>{text}</label>
-    <select name={name} id={name}>
-    <options>Selecione uma Opçao</options>
+    <select name={name} id={name}
+     onChange={handleOnChange}
+     defaultValue={defaultValue || ''}>
+      
+    <option>Selecione uma Opçao</option>
+    {options.map((option) => (
+      <option defaultValue={option.id} key={option.id}>{option.name}</option>
+    ))}
     </select>
   
   </div>
