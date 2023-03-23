@@ -8,10 +8,12 @@ function Select({text,name,options,handleOnChange,defaultValue}){
      onChange={handleOnChange}
      defaultValue={defaultValue || ''}>
       
-    <option>Selecione uma Opçao</option>
-    {options.map((options) => (
-      <option defaultValue={options.id} key={options.id}>{options.name}</option>
-    ))}
+      <option>Selecione uma opção</option>
+        {options.map((options) => (
+           <option defaultValue={options.id} key={options.id}>
+            {options.name}
+          </option>
+        ))}
     </select>
   
   </div>
