@@ -13,7 +13,7 @@ function NewProject(){
             },
             body: JSON.stringify(project),
 
-        }).then((resp) => resp.json()).then((date) => console.log(date)).catch(Err => console.log(Err))
+        }).then((resp) => resp.json()).then((date) => navigate('/projects', { message: 'Projeto criado com suceso'}))
     }
 
     return ( 
