@@ -2,7 +2,7 @@ import { useNavigate} from 'react-router-dom'
 import ProjectForm from '../project/ProjectForm'
 import styles from './NewProjects.module.css'
 function NewProject(){
-    const history = useNavigate()
+    const navigate = useNavigate()
     function createPost(project){
         project.cost = 0
         project.services = []
