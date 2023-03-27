@@ -6,8 +6,8 @@ import SubmitButton from '../form/SubmitButton'
 import styles from './ProjectForm.module.css'
 
 function ProjectForm({handleSubmit, btnText, projectData}){
-    const[categories,setCategories] = useState([])
     const[project,setProject] = useState(projectData || {})
+    const[categories,setCategories] = useState([])
     useEffect(() => {
         fetch('http://localhost:5000/categories', {
           method: "GET",
@@ -24,27 +24,30 @@ function ProjectForm({handleSubmit, btnText, projectData}){
         e.preventDefault()
         handleSubmit(project)
       }
-      function handleCategory(e){
-        setProject({...project,
-        category:{
-          id:e.target.value,
-          name: e.target.options[e.target.selectedIndex].text,
-        },
-      })
-        
-      }
+
       function handleChange(e){
         setProject({...project,[e.target.name]: e.target.value})
         console.log(project)
       }
+      function handleCategory(e){
+        setProject({...project,
+        category:{
+          id: e.target.value,
+          name: e.target.options[e.target.selectedIndex].text,
+          
+        },
+      })
+        
+      }
+
 
 
 
     return (
         <form onSubmit={submit} className={styles.form}>
-          <Input type="text" text="Nome do projeto" name="name" placeholder="Insira o nome do projeto" handleOnChange={handleChange} value={project.name ? project.name : ''}/>
-          <Input type="number" text="Orçamento do projeto" name="budget" placeholder="Insira o nome do projeto" handleOnChange={handleChange} value={project.budget ? project.budget : ''}/>
-            <Select name="category_id" text="Criar projeto" options={categories} handleOnChange={handleCategory} value={project.category ? project.category.id : ''}/>
+          <Input type="text" text="Nome do projeto" name="name" placeholder="Insira o nome do projeto" onChange={handleChange} value={project.name}/>
+          <Input type="number" text="Orçamento do projeto" name="budget" placeholder="Insira o nome do projeto" onChange={handleChange} value={project.budget}/>
+            <Select name="category_id" text="Criar projeto" options={categories} onChange={handleCategory} value={project.category ? project.category.id : ''}/>
             <SubmitButton text={btnText}/>
             
         </form>
