@@ -1,6 +1,7 @@
 import {useLocation} from 'react-router-dom'
 import Message from "../layout/Message"
 
+
 function Projects(){
 const location = useLocation()
 let message = ''
@@ -10,7 +11,7 @@ if(location.state){
     return (
         <div>
             <h1>Projetos/</h1>
-            {message && <Message type="sucess" msg={message}/>}
+            {message && <Message type="success" msg={message}/>}
         </div>
     )
 }
