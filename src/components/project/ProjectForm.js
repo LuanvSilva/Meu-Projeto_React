@@ -26,6 +26,8 @@ function ProjectForm({ handleSubmit, btnText, projectData }) {
     e.preventDefault()
     handleSubmit(project)
   }
+  ///////
+  /////
 
   function handleChange(e) {
     setProject({ ...project, [e.target.name]: e.target.value })
